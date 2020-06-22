@@ -231,7 +231,7 @@ public class TimerView extends LinearLayout{
 
                 case MSG_WHAT_TIME_IS_UP:
                     new AlertDialog.Builder ( getContext ( ) ).setTitle ( "Timer" )
-                            .setMessage ( "时间到" )
+                            .setMessage ( "时间到了" )
                             .setNegativeButton ( "返回" , null )
                             .show ( );
                     btnStart.setVisibility ( View.VISIBLE );
