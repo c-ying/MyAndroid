@@ -56,7 +56,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 if (add) {
                     //Toast.makeText(AddActivity.this,"添加成功",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
-                    intent.setClass(AddActivity.this, MainActivity.class);
+                    intent.setClass(AddActivity.this, MyFragment1.class);
                     intent.putExtra("Insert", 1);
                     startActivity(intent);
                     finish();
@@ -65,7 +65,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 }
             }
         } else if (view == findViewById(R.id.back_add)) {
-            Intent intent = new Intent(AddActivity.this, MainActivity.class);
+            Intent intent = new Intent(AddActivity.this, MyFragment1.class);
             startActivity(intent);
         }
 

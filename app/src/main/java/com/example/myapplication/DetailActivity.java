@@ -48,7 +48,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         if (view == findViewById(R.id.back_detail)) {
-            Intent intent = new Intent(DetailActivity.this, MainActivity.class);
+            Intent intent = new Intent(DetailActivity.this, MyFragment1.class);
             startActivity(intent);
         }else if(view == findViewById(R.id.save_detail)){
             get_title=title.getText().toString().trim();
@@ -65,7 +65,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
                 Toast.makeText(this,"修改成功",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent();
-                intent.setClass(DetailActivity.this,MainActivity.class);
+                intent.setClass(DetailActivity.this,MyFragment1.class);
                 startActivity(intent);
                 finish();
 
