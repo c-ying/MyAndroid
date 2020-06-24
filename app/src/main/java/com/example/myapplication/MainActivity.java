@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private TextView txt_title;
     private FrameLayout fl_content;
-
+    private TabHost tabHost;//tabhost分页
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +64,14 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         bindViews();
 
         rb_channel.setChecked(true);
+//在fragmment2中的四分页
+        tabHost=(TabHost)findViewById(android.R.id.tabhost);
+        tabHost.setup();
+//四个分页 使用tabhost
+        tabHost.addTab(tabHost.newTabSpec("tabAlarm").setIndicator("闹钟").setContent(R.id.tabAlarm));
+        tabHost.addTab(tabHost.newTabSpec("tabTime").setIndicator("时钟").setContent(R.id.tabTime));
+        tabHost.addTab(tabHost.newTabSpec("tabTimer").setIndicator("计时器").setContent(R.id.tabTimer));
+        tabHost.addTab(tabHost.newTabSpec("tabStopWatch").setIndicator("秒表").setContent(R.id.tabStopWatch));
 
     }
 
