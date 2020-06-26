@@ -27,7 +27,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/nicheng"
                 android:layout_width="wrap_content"
@@ -60,6 +59,7 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <!--第二块-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -254,7 +254,6 @@
                 android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:src="@mipmap/ic_setting" />
-
             <TextView
                 android:id="@+id/security"
                 android:layout_width="340dp"
@@ -265,6 +264,7 @@
                 android:paddingTop="12dp"
                 android:text="安全中心"
                 android:textSize="20sp" />
+
 
             <ImageButton
                 android:layout_width="30dp"

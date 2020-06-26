@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--箭头返回登录-->
+    <RelativeLayout
+        android:id="@+id/rl_loginactivity_top"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#CCCCFF" >
+        <ImageView
+            android:id="@+id/update_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_left_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改个人资料"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/iv_loginactivity_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="45dp"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+
+    <!--修改基本信息-->
+    <LinearLayout
+        android:id="@+id/ll_registeractivity_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/rl_loginactivity_top"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵        称："
+                android:textSize="20dp"
+                />
+            <EditText
+                android:id="@+id/nichengUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="输入昵称" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邮        箱："
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/emailUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="输入邮箱"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="性        别："
+                android:textSize="20dp" />
+
+            <RadioGroup
+                android:id="@+id/sexUpdate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/woman"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/nan"
+                    android:text="    男"
+                    android:layout_marginLeft="13dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" />
+
+                <RadioButton
+                    android:id="@id/woman"
+                    android:text="    女"
+                    android:layout_marginLeft="13dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="生        日："
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/birthUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="输入生日"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个性签名："
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/signatureUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="输入签名"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <!--注册-->
+        <Button
+            android:id="@+id/Update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/ll_loginactivity_two"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="5dp"
+            android:background="#CCCCFF"
+            android:text="确认修改"
+            android:textColor="#fff"
+            />
+
+
+
+    </LinearLayout>
+</RelativeLayout>
