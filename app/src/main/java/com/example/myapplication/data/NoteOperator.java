@@ -28,6 +28,7 @@ public class NoteOperator {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Note.KEY_title, note.title);
         contentValues.put(Note.KEY_context, note.context);
+        contentValues.put(Note.KEY_time, note.time);
         //插入每一行数据
         long note_id = db.insert(Note.TABLE, null, contentValues);
         db.close();
@@ -57,8 +58,8 @@ public class NoteOperator {
     public ArrayList<HashMap<String, String>> getNoteList() {
         //与数据库建立连接
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sql = "select " + Note.KEY_id + "," + Note.KEY_title + "," + Note.KEY_context +
-                " from " + Note.TABLE;
+        String sql = "select " + Note.KEY_id + "," + Note.KEY_title + "," + Note.KEY_context + "," + Note.KEY_time +
+        " from " + Note.TABLE;
         //通过游标将每一条数据放进ArrayList中
         ArrayList<HashMap<String, String>> noteList = new ArrayList<HashMap<String, String>>();
         Cursor cursor = db.rawQuery(sql, null);
@@ -66,6 +67,8 @@ public class NoteOperator {
             HashMap<String, String> note = new HashMap<String, String>();
             note.put("id", cursor.getString(cursor.getColumnIndex(Note.KEY_id)));
             note.put("title", cursor.getString(cursor.getColumnIndex(Note.KEY_title)));
+            note.put("context", cursor.getString(cursor.getColumnIndex(Note.KEY_context)));
+            note.put("time", cursor.getString(cursor.getColumnIndex(Note.KEY_time)));
             noteList.add(note);
         }
         cursor.close();
@@ -82,13 +85,14 @@ public class NoteOperator {
     public Note getNoteById(int id) {
         //与数据库建立连接
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sql = "select " + Note.KEY_title + "," + Note.KEY_context +
+        String sql = "select " + Note.KEY_title + "," + Note.KEY_context +","+Note.KEY_time+
                 " from " + Note.TABLE + " where " + Note.KEY_id + "=?";
         Note note = new Note();
         Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(id)});
         while (cursor.moveToNext()) {
             note.title = cursor.getString(cursor.getColumnIndex(Note.KEY_title));
             note.context = cursor.getString(cursor.getColumnIndex(Note.KEY_context));
+            note.time = cursor.getString(cursor.getColumnIndex(Note.KEY_time));
         }
         cursor.close();
         db.close();
@@ -106,6 +110,7 @@ public class NoteOperator {
 
         contentValues.put(Note.KEY_title, note.title);
         contentValues.put(Note.KEY_context, note.context);
+        contentValues.put(Note.KEY_time, note.time);
 
         db.update(Note.TABLE, contentValues, Note.KEY_id + "=?", new String[]{String.valueOf(note.note_id)});
         db.close();
