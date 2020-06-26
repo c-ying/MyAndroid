@@ -4,14 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/login">
 
 <!--箭头返回登录-->
     <RelativeLayout
         android:id="@+id/rl_loginactivity_top"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@color/color_minefragment_top" >
+        android:background="@color/main" >
         <ImageView
             android:id="@+id/registeractivity_back"
             android:layout_width="30dp"
@@ -64,7 +65,7 @@
                     android:id="@+id/usernameRegister"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="请输入用户名！！！"
+                    android:hint="请输入用户名"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     />
@@ -78,7 +79,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="密       码："
+                    android:text="密        码："
                     android:textSize="20dp"
                     />
                 <EditText
@@ -88,7 +89,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     android:inputType="textPassword"
-                    android:hint="请输入密码！！！" />
+                    android:hint="请输入密码" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -105,7 +106,7 @@
                 android:id="@+id/passwordRegister1"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="请再次输入密码！！！"
+                android:hint="请再次输入密码"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:inputType="textPassword"/>
@@ -119,14 +120,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="邮      箱："
+                    android:text="邮       箱："
                     android:textSize="20dp"/>
 
                 <EditText
                     android:id="@+id/emailRegister"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="请输入邮箱！！！"
+                    android:hint="请输入邮箱"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="10dp"/>
         </LinearLayout>

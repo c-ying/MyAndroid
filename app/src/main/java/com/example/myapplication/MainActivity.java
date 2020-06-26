@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private TextView txt_title;
     private FrameLayout fl_content;
-    private TabHost tabHost;//tabhost分页
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

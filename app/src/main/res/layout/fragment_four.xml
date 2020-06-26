@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C0C0C0"
+    android:background="#CCCCCC"
     android:orientation="vertical">
     <!--第一块-->
     <LinearLayout
@@ -43,7 +43,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="用户名:"
-                android:textColor="#808080"
                 android:textSize="17sp" />
             <TextView
                 android:id="@+id/f4_username"

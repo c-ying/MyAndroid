@@ -17,9 +17,11 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     private Button back;  //返回按钮
     private EditText title;   //标题
     private EditText context;   //内容
+    private EditText time;
     private Button finish;  //完成按钮
     private String get_title;
     private String get_context;
+    private String get_time;
 //    private int note_id=0;
 
     @Override
@@ -29,7 +31,9 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         back = (Button) findViewById(R.id.back_add);
         title = (EditText) findViewById(R.id.title_add);
+        time = (EditText) findViewById(R.id.time_add);
         context = (EditText) findViewById(R.id.context_add);
+
         finish = (Button) findViewById(R.id.finish);
 
         finish.setOnClickListener(this);
@@ -43,14 +47,18 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         if (view == findViewById(R.id.finish)) {
             NoteOperator noteOperator = new NoteOperator(AddActivity.this);
             get_title = title.getText().toString().trim();
+            get_time = time.getText().toString().trim();
             get_context = context.getText().toString().trim();
 
-            if (TextUtils.isEmpty(get_title) || TextUtils.isEmpty(get_context)) {
+
+            if (TextUtils.isEmpty(get_title) || TextUtils.isEmpty(get_context)|| TextUtils.isEmpty(get_time)) {
                 Toast.makeText(AddActivity.this, "添加信息不能为空", Toast.LENGTH_SHORT).show();
             } else {
                 Note note = new Note();
                 note.title = get_title;
+                note.time = get_time;
                 note.context = get_context;
+
                 boolean add = noteOperator.insert(note);
                 //如果添加数据成功，跳到待办事项界面，并通过传值，让目标界面进行刷新
                 if (add) {

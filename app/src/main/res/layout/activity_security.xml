@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_security_top"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#CCCCFF">
+        <LinearLayout
+            android:id="@+id/security_back"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_left_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置密码"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/iv_loginactivity_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/sec_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:clickable="true"
+            />
+    </RelativeLayout>
+
+
+
+    <!--输入框 用户名 密码 middle-->
+    <LinearLayout
+        android:id="@+id/ll_loginactivity_two"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/rl_loginactivity_top"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30pt"
+                android:text="新 密 码   :     "
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/newpass"
+                android:layout_width="match_parent"
+                android:layout_height="30pt"
+                android:hint="填写新密码"
+            android:inputType="textPassword"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30pt"
+                android:text="确认密码 :    "
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/newpass1"
+                android:layout_width="match_parent"
+                android:layout_height="30pt"
+                android:hint="再次填写确认"
+                android:inputType="textPassword"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
