@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -16,15 +18,17 @@ import androidx.fragment.app.Fragment;
  */
 
 public class MyFragment2 extends Fragment {
-    private TabHost tabHost;//tabhost分页
+    //private TabHost tabHost;//tabhost分页
+
+    LocalActivityManager localActivityManager;
+    TabHost tabHost;
+    TabWidget tabWidget;
 
     public MyFragment2() {
-
+       super();
         //tabHost=(TabHost)findViewById(android.R.id.tabhost); fragment中不能使用这句 不直接继承activity
-        LocalActivityManager localActivityManager = new LocalActivityManager(getActivity(), true);
-        Bundle savedInstanceState;
-        localActivityManager.dispatchCreate(savedInstanceState);
-             tabHost.setup(localActivityManager);
+
+        tabHost.setup(localActivityManager);
 //四个分页 使用tabhost
         tabHost.addTab(tabHost.newTabSpec("tabAlarm").setIndicator("闹钟").setContent(R.id.tabAlarm));
         tabHost.addTab(tabHost.newTabSpec("tabTime").setIndicator("时钟").setContent(R.id.tabTime));

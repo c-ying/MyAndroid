@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">//manifest里设置为这个acitivity设置了主题 我设置的主题与app使用主题冲突
+    tools:context=".MainActivity"><!--manifest里设置为这个acitivity设置了主题 我设置的主题与app使用主题冲突-->
 
     <TabHost
         android:id="@android:id/tabhost"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.example.timer.AlarmView
+                <com.example.myapplication.AlarmView
                     android:id="@+id/tabAlarm"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -48,7 +48,7 @@
                         android:background="@android:drawable/ic_menu_add" />
 
 
-                </com.example.timer.AlarmView>
+                </com.example.myapplication.AlarmView>
 
                 <LinearLayout
                     android:id="@+id/tabTime"
@@ -65,7 +65,7 @@
 
 
                 </LinearLayout>
-                <com.example.timer.TimerView
+                <com.example.myapplication.TimerView
                     android:id="@+id/tabTimer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -134,10 +134,10 @@
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
-                </com.example.timer.TimerView>
+                </com.example.myapplication.TimerView>
 
 
-                <com.example.timer.StopWatch
+                <com.example.myapplication.StopWatch
                     android:id="@+id/tabStopWatch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -184,7 +184,7 @@
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
-                </com.example.timer.StopWatch>
+                </com.example.myapplication.StopWatch>
 
             </FrameLayout>
         </LinearLayout>

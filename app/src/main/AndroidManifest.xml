@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-    <uses-permission android:name="android.permission.SET_ALARM"/>//闹钟权限
+    <uses-permission android:name="android.permission.SET_ALARM"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">//连style
+        android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
