@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.ContactsContract;
 
 
 public class UserService {
@@ -101,5 +100,8 @@ public class UserService {
         cursor.close();
         db.close();
         return user.nicheng;
+    }
+
+    public static class Tab1Activity {
     }
 }
