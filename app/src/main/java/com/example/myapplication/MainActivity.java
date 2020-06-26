@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private RadioButton rb_better;
     private RadioButton rb_setting;
     private ViewPager vpager;
+    String username;
+    String nicheng;
 
     private MyFragmentPagerAdapter mAdapter;
 
-    private com.example.myapplication.MyFragment4 myragment4;
-    private List<Fragment> mFragmentList=new ArrayList<Fragment>();
 
     //几个代表页面的常量
     public static final int PAGE_ONE = 0;
@@ -46,27 +46,31 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     public static final int PAGE_FOUR = 3;
 
 
-
-    private FragmentManager fManager = null;
-
-    private TextView txt_title;
-    private FrameLayout fl_content;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
 
-        //fManager=getSupportFragmentManager();//list
-
         bindViews();
-
         rb_channel.setChecked(true);
+
+        /*Updateactivity跳转到fragment4*/
+        Intent intent=getIntent();
+        int id=intent.getIntExtra("flag",0);
+        if(id>0){
+            vpager = (ViewPager) findViewById(R.id.vpager);
+            vpager.setAdapter(mAdapter);
+            vpager.setCurrentItem(3);
+            vpager.addOnPageChangeListener(this);
+            rb_setting.setChecked(true);
+        }
+
 
     }
 
     private void bindViews() {
+        //txt_topbar = (TextView) findViewById(R.id.txt_topbar);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_channel = (RadioButton) findViewById(R.id.rb_channel);
         rb_message = (RadioButton) findViewById(R.id.rb_message);
@@ -81,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
 
-       // txt_title = (TextView) findViewById(R.id.txt_title);
+        // txt_title = (TextView) findViewById(R.id.txt_title);
         //fl_content = (FrameLayout) findViewById(R.id.fl_content);
     }
 
@@ -138,7 +142,26 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     /*获取登录界面输入的用户名，再传递到Fragment*/
     public  String getUsername(){
         Intent intent=getIntent();
-        String username=intent.getStringExtra("username_login");
+        username=intent.getStringExtra("username_login");
         return username;
+    }
+    public String getNicheng(){
+        Intent intent3=new Intent();
+        nicheng=intent3.getStringExtra("nicheng");
+        return nicheng;
+    }
+
+    public void sendValue(){
+        //namehuichuan=value;
+        /*将获取的用户名传到资料修改界面*/
+        Intent intent1 = new Intent(MainActivity.this,UpdateActivity.class);
+        intent1.putExtra("username_login1",username);
+        startActivity(intent1);
+    }
+    public void sendValue1(){
+        /*将获取的用户名传到密码修改界面*/
+        Intent intent2 = new Intent(MainActivity.this,SecurityActivity.class);
+        intent2.putExtra("username_login1",username);
+        startActivity(intent2);
     }
 }

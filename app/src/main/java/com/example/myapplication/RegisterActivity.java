@@ -50,12 +50,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(pass)&&!TextUtils.isEmpty(emailstr)&&pass.equals(pass1)) {
                     if (phoneCode.equals(realCode)) { User user = new User();
-                    user.setUsername(name);
-                    user.setPassword(pass);
-                    user.setEmail(emailstr);
-                    //user.setSex(sexstr);
+                        user.username=name;
+                        user.password=pass;
+                        user.email=emailstr;
+
                     uService.register(user);
                     Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
+                    startActivity(intent);
                 }else {
                         Toast.makeText(RegisterActivity.this, "验证码错误!", Toast.LENGTH_SHORT).show();
                     }
