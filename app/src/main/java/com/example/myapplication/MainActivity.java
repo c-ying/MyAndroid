@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         ViewPager.OnPageChangeListener {
 
     //UI Objects
-    private TextView txt_topbar;
     private RadioGroup rg_tab_bar;
     private RadioButton rb_channel;
     private RadioButton rb_message;
@@ -53,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private TextView txt_title;
     private FrameLayout fl_content;
 
+    String username;
+    String nicheng;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     }
 
     private void bindViews() {
-        txt_topbar = (TextView) findViewById(R.id.txt_topbar);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_channel = (RadioButton) findViewById(R.id.rb_channel);
         rb_message = (RadioButton) findViewById(R.id.rb_message);
@@ -83,9 +84,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
 
-       // txt_title = (TextView) findViewById(R.id.txt_title);
+        // txt_title = (TextView) findViewById(R.id.txt_title);
         //fl_content = (FrameLayout) findViewById(R.id.fl_content);
     }
+
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -140,7 +142,27 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     /*获取登录界面输入的用户名，再传递到Fragment*/
     public  String getUsername(){
         Intent intent=getIntent();
-        String username=intent.getStringExtra("username_login");
+        username=intent.getStringExtra("username_login");
         return username;
+    }
+
+    public String getNicheng(){
+        Intent intent3=new Intent();
+        nicheng=intent3.getStringExtra("nicheng");
+        return nicheng;
+    }
+
+    public void sendValue(){
+        //namehuichuan=value;
+        /*将获取的用户名传到资料修改界面*/
+        Intent intent1 = new Intent(MainActivity.this,UpdateActivity.class);
+        intent1.putExtra("username_login1",username);
+        startActivity(intent1);
+    }
+    public void sendValue1(){
+        /*将获取的用户名传到密码修改界面*/
+        Intent intent2 = new Intent(MainActivity.this,SecurityActivity.class);
+        intent2.putExtra("username_login1",username);
+        startActivity(intent2);
     }
 }
