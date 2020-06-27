@@ -61,6 +61,7 @@ public class MyFragment2 extends Fragment {
         view = inflater.inflate(R.layout.fg_content,container,false);
         TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
         txt_content.setText("第二个Fragment");
+
         findTabView();
         localActivityManager = new LocalActivityManager(getActivity(), true);
         localActivityManager.dispatchCreate(savedInstanceState);
