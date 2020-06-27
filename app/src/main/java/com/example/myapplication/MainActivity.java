@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
 
-       // txt_title = (TextView) findViewById(R.id.txt_title);
+        // txt_title = (TextView) findViewById(R.id.txt_title);
         //fl_content = (FrameLayout) findViewById(R.id.fl_content);
     }
 
@@ -142,8 +142,14 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     /*获取登录界面输入的用户名，再传递到Fragment*/
     public  String getUsername(){
         Intent intent=getIntent();
-        String username=intent.getStringExtra("username_login");
+        username=intent.getStringExtra("username_login");
         return username;
+    }
+
+    public String getNicheng(){
+        Intent intent3=new Intent();
+        nicheng=intent3.getStringExtra("nicheng");
+        return nicheng;
     }
 
     public void sendValue(){
