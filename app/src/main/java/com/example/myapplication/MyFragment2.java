@@ -70,14 +70,8 @@ public class MyFragment2 extends Fragment {
         //Intent localIntent1 = new Intent();
         //localIntent1.setClass(getActivity(), AlarmView.class);用intent方法去启动一个class 不知道这两句什么用处 暂定
         tabHost.addTab(tabHost.newTabSpec("tabAlarm").setIndicator("闹钟").setContent(R.id.tabAlarm));
-
-
         tabHost.addTab(tabHost.newTabSpec("tabTime").setIndicator("时钟").setContent(R.id.tabTime));
-
-
         tabHost.addTab(tabHost.newTabSpec("tabTimer").setIndicator("计时器").setContent(R.id.tabTimer));
-
-
         tabHost.addTab(tabHost.newTabSpec("tabStopWatch").setIndicator("秒表").setContent(R.id.tabStopWatch));
 
 
