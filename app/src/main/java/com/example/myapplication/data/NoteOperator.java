@@ -26,6 +26,7 @@ public class NoteOperator {
         //与数据库建立连接
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(Note.KEY_username,note.username1);
         contentValues.put(Note.KEY_title, note.title);
         contentValues.put(Note.KEY_context, note.context);
         contentValues.put(Note.KEY_time, note.time);
@@ -59,7 +60,7 @@ public class NoteOperator {
         //与数据库建立连接
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String sql = "select " + Note.KEY_id + "," + Note.KEY_title + "," + Note.KEY_context + "," + Note.KEY_time +
-        " from " + Note.TABLE;
+        " from " + Note.TABLE ;
         //通过游标将每一条数据放进ArrayList中
         ArrayList<HashMap<String, String>> noteList = new ArrayList<HashMap<String, String>>();
         Cursor cursor = db.rawQuery(sql, null);

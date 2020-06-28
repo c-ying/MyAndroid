@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         bindViews();
 
         rb_channel.setChecked(true);
+       
 
     }
 
@@ -164,5 +165,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         Intent intent2 = new Intent(MainActivity.this,SecurityActivity.class);
         intent2.putExtra("username_login1",username);
         startActivity(intent2);
+    }
+    public void sendValue2(){
+        /*将获取的用户名传到添加待办页面*/
+        Intent intent4=new Intent(MainActivity.this,AddActivity.class);
+        intent4.putExtra("username_login2",username);
+        startActivity(intent4);
     }
 }

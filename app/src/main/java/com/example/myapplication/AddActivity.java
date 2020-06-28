@@ -35,6 +35,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     private String get_title;
     private String get_context;
     private String get_time;
+
     private int mYear, mMonth, mDay, mHours, mMinute, mSecond;
     private Calendar mCalendar;
     private AlarmManager mAlarmManager;
@@ -178,17 +179,22 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         if (view == findViewById(R.id.finish)) {
             NoteOperator noteOperator = new NoteOperator(AddActivity.this);
+            Intent intent4=getIntent();
+            String name=intent4.getStringExtra("username_login2");
             get_title = title.getText().toString().trim();
             get_time = time1.getText().toString().trim();
             get_context = context.getText().toString().trim();
 
 
+
             if (TextUtils.isEmpty(get_title) || TextUtils.isEmpty(get_context) || TextUtils.isEmpty(get_time)) {
                 Toast.makeText(AddActivity.this, "添加信息不能为空", Toast.LENGTH_SHORT).show();
             } else {
+
                 Note note = new Note();
                 note.title = get_title;
                 note.time = get_time;
+                note.username1 = name;
                 note.context = get_context;
 
                 boolean add = noteOperator.insert(note);

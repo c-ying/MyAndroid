@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Ringtone;
@@ -45,76 +46,22 @@ public class MyFragment1 extends Fragment {
     Button ceshi;
     TextView note_id;//向其他界面传值
     ArrayList<HashMap<String, String>> list;
-    /*public class TimeThread extends Thread {
-        @Override
-        public void run() {
-            do {
-                try {
-                    Thread.sleep(1000);
-                    Message msg = new Message();
-                    msg.what = 1;  //消息(一个整型值)
-                    mHandler.sendMessage(msg);// 每隔1秒发送一个msg给mHandler
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            } while (true);
-        }
-    }
 
-    //在主线程里面处理消息并更新UI界面
-    private Handler mHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case 1:
-                    long nowTime = System.currentTimeMillis();//获取系统时间
-                    CharSequence sysTime = DateFormat.format("hh:mm:ss", nowTime);//时间显示格式
-                    //showtime.setText(sysTime); //更新时间
-                    NowTime = sysTime.toString();
-                    for(int i=0;i<list1.size();i++){
-                        iteminclude item = (iteminclude) list1.get(i);
-                        NowTime2 = item.getTime();
-                        if(NowTime.equals(NowTime2)){
-                            Log.i("Sos","成功");
-                            Toast.makeText(getActivity(), "时间到了！", Toast.LENGTH_LONG).show();
-                            //zhendong();
-                            //soundplay();
-                        }
-                    }
-                    /*Log.i("Nowtime",NowTime);
-                    /*Log.i("Nowtime",NowTime);
-                    Log.i("Nowtime2",NowTime2);
-                    break;
-                default:
-                    break;
-            }
-        }
-    };*/
-    //设置震动
-    /*public void zhendong(){
-        Vibrator vibrator = (Vibrator) this.getSystemService(this.VIBRATOR_SERVICE);
-        long[] patter = {1000, 1000, 1000, 1000};
-        vibrator.vibrate(patter,0);
-    }
-    //关闭震动,响铃
-    public void close(){
-        Vibrator vibrator = (Vibrator) this.getSystemService(this.VIBRATOR_SERVICE);
-        vibrator.cancel();
-        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Ringtone rt = RingtoneManager.getRingtone(getApplicationContext(), uri);
-    }
-    //设置响铃
-    public void soundplay(){
-        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Ringtone rt = RingtoneManager.getRingtone(getApplicationContext(), uri);
-        rt.play();
-    }*/
 
 
     public MyFragment1() {
 
 
+    }
+    //定义回调接口
+    public interface MyListener{
+        public void sendValue2();
+    }
+    private MainActivity myListener;
+    @Override
+    public void onAttach(Context context) {   //获取MainActivity传递的用户名
+        super.onAttach(context);
+        myListener= (MainActivity) context;
     }
 
 
@@ -123,6 +70,7 @@ public class MyFragment1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_one, container, false);
         listView = (ListView) view.findViewById(R.id.listView);
         add = (Button) view.findViewById(R.id.add);
+        String  username1=((MainActivity)getActivity()).getUsername();
 
 
         //通过list获取数据库表中的所有id和title，通过ListAdapter给listView赋值
@@ -194,9 +142,9 @@ public class MyFragment1 extends Fragment {
 
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                Intent intent=new Intent(getActivity(),AddActivity.class);
-                startActivity(intent);
+                myListener.sendValue2();
+                //Intent intent=new Intent(getActivity(),AddActivity.class);
+                //startActivity(intent);
 
             }
         });

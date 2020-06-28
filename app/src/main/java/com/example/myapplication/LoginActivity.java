@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 String name=username.getText().toString();
                 String pass=password.getText().toString();
                 String username_login=username.getText().toString().trim();
+
                 UserService uService=new UserService(LoginActivity.this);
                 boolean flag=uService.login(name, pass);
                 if(flag){
