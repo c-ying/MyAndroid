@@ -24,6 +24,7 @@ public class UpdateActivity extends AppCompatActivity {
     RadioGroup sex;//性别
     EditText birth;//生日
     EditText signature;//签名
+    EditText job;  //职业
     Button update;  //确认更新按钮
     ImageView update_back;//返回
     int flag;
@@ -40,6 +41,7 @@ public class UpdateActivity extends AppCompatActivity {
                 String sexstr=((RadioButton)UpdateActivity.this.findViewById(sex.getCheckedRadioButtonId())).getText().toString();
                 String birthstr=birth.getText().toString().trim();
                 String signstr=signature.getText().toString().trim();
+                String jobstr=job.getText().toString().trim();
                 UserService uService=new UserService(UpdateActivity.this);
                 User user = new User();
                 user.nicheng=nichengstr;
@@ -48,15 +50,17 @@ public class UpdateActivity extends AppCompatActivity {
                 user.sex=sexstr;
                 user.birth=birthstr;
                 user.signature=signstr;
+                user.job=jobstr;
                 boolean update1= uService.update(user);
                 if(update1) {
                     Toast.makeText(UpdateActivity.this, "修改成功", Toast.LENGTH_LONG).show();
                     flag=1;
-                    Intent intent=new Intent(UpdateActivity.this,MainActivity.class);
-                    intent.putExtra("flag",3);
+                    Intent intent=new Intent(UpdateActivity.this,MyFragment4.class);
+                    //intent.putExtra("flag",3);
                     /*传递昵称到fragment，先用intent传到MainActivity*/
                     //intent.putExtra("nicheng",nichengstr);
                     /*不用startActivity(intent)，直接finish（）,否则获取的ID会被清除*/
+                  startActivity(intent);
                     UpdateActivity.this.finish();
                 }
                 else {
@@ -82,6 +86,7 @@ public class UpdateActivity extends AppCompatActivity {
         sex=(RadioGroup) findViewById(R.id.sexUpdate);
         birth=(EditText)findViewById(R.id.birthUpdate);
         signature=(EditText)findViewById(R.id.signatureUpdate);
+        job=(EditText)findViewById(R.id.jobUpdate);
         update=(Button) findViewById(R.id.Update);
         update_back=findViewById(R.id.update_back);
     }
