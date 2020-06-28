@@ -21,25 +21,23 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        //textview = findViewById(R.id.text);
-
+        textview = findViewById(R.id.text);
+          //延迟5000ms跳转到主界面
         handler.postDelayed(myRunnable, showTime * 1000);
         handler.sendEmptyMessage(111);
     }
 
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
-           /* super.handleMessage(msg);
+            super.handleMessage(msg);
             if (msg.what == 111)
-
             {
-                Log.e("TAG", "what" + showTime);
-
+                textview.setText(showTime+"  关闭");
                 showTime--;
                 if (showTime > 0) {
-                    handler.sendEmptyMessageDelayed(111, 1000);
+                    handler.sendEmptyMessageDelayed(111, 1000);  //一秒后给自己发送信息
                 }
-            }*/
+            }
         }
     };
 
@@ -50,7 +48,7 @@ public class SplashActivity extends AppCompatActivity {
         }
     };
 
-    //跳转到主页
+    //跳转到主页，关闭自身页面
     public void jundToMainActivity(){
         Intent intent = new Intent(SplashActivity.this,
                 LoginActivity.class);
@@ -73,11 +71,7 @@ public class SplashActivity extends AppCompatActivity {
         Toast.makeText(this,"广告之后更精彩！",Toast.LENGTH_SHORT).show();
 
         //如果按回退键，关闭程序，代码设计
-        // finish();//关闭页面
-        // handler.removeCallbacks(myRunnable);//取消runnable对象
-
+        finish();//关闭页面
+         handler.removeCallbacks(myRunnable);//取消runnable对象
     }
-
-
-
 }
