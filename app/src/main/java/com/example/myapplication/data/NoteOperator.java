@@ -56,14 +56,17 @@ public class NoteOperator {
      *
      * @return ArrayList
      */
-    public ArrayList<HashMap<String, String>> getNoteList() {
+    public ArrayList<HashMap<String, String>> getNoteList(String username1) {
         //与数据库建立连接
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sql = "select " + Note.KEY_id + "," + Note.KEY_title + "," + Note.KEY_context + "," + Note.KEY_time +
-        " from " + Note.TABLE ;
+       /* String sql = "select " + Note.KEY_id + "," + Note.KEY_title + "," + Note.KEY_context + "," + Note.KEY_time +
+        " from " + Note.TABLE ;*/
+        String sql = "select " + Note.KEY_id  + ","+ Note.KEY_title + "," + Note.KEY_context + "," + Note.KEY_time +
+                " from " + Note.TABLE+ " where " + Note.KEY_username + "=?";
         //通过游标将每一条数据放进ArrayList中
         ArrayList<HashMap<String, String>> noteList = new ArrayList<HashMap<String, String>>();
-        Cursor cursor = db.rawQuery(sql, null);
+        //Cursor cursor = db.rawQuery(sql, null);
+        Cursor cursor = db.rawQuery(sql,new String[]{String.valueOf(username1)});
         while (cursor.moveToNext()) {
             HashMap<String, String> note = new HashMap<String, String>();
             note.put("id", cursor.getString(cursor.getColumnIndex(Note.KEY_id)));

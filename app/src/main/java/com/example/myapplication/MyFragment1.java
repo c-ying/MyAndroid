@@ -40,6 +40,7 @@ public class MyFragment1 extends Fragment {
 
     TextView showtime;
     String NowTime,NowTime2;
+    String username1;
     ListView listView;
     List list1;
     Button add;//添加按钮
@@ -62,6 +63,7 @@ public class MyFragment1 extends Fragment {
     public void onAttach(Context context) {   //获取MainActivity传递的用户名
         super.onAttach(context);
         myListener= (MainActivity) context;
+        username1=((MainActivity)getActivity()).getUsername();
     }
 
 
@@ -75,7 +77,8 @@ public class MyFragment1 extends Fragment {
 
         //通过list获取数据库表中的所有id和title，通过ListAdapter给listView赋值
         final NoteOperator noteOperator = new NoteOperator(getActivity());
-        list = noteOperator.getNoteList();
+        list = noteOperator.getNoteList(username1);
+        //list = noteOperator.getNoteList();
         final ListAdapter listAdapter = new SimpleAdapter(getActivity(), list, R.layout.item,
                 new String[]{"id", "title","context","time"}, new int[]{R.id.note_id, R.id.note_title,R.id.note_content,R.id.note_time});
         listView.setAdapter(listAdapter);
