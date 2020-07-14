@@ -26,6 +26,7 @@
         <activity android:name=".UpdateActivity" />
 
         <activity android:name=".SecurityActivity"></activity>
+        <activity android:name=".Time"></activity>
 
 
 

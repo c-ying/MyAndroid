@@ -12,13 +12,14 @@
         android:src="@mipmap/ic_tur_icon"
         android:background="@color/bottom_bg"
         android:scaleType="center"
+        android:layout_marginTop="350dp"
         tools:ignore="MissingConstraints">
     </com.example.myapplication.MyButton>
 
     <TextView
         android:id="@+id/main_tv"
-        android:layout_width="121dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
         android:textSize="80dp" />
 
     <TextView
@@ -29,13 +30,15 @@
 
         android:layout_marginTop="200dp"
         android:text="快点开始你的计划吧"
-        android:textSize="36sp" />
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:text="Button"
-        android:scaleType="center"/>
+        android:scaleType="center"
+        android:layout_marginTop="300dp"
+        android:text="Button" />
 
 
 </RelativeLayout>
