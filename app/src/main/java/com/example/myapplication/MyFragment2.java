@@ -38,7 +38,7 @@ public class MyFragment2 extends Fragment {
       //  tabHost.addTab(tabHost.newTabSpec("tabStopWatch").setIndicator("秒表").setContent(R.id.tabStopWatch));
     }
 
-    @Override
+  /*  @Override
     public void onResume() {
         super.onResume();
         localActivityManager.dispatchResume();
@@ -56,7 +56,7 @@ public class MyFragment2 extends Fragment {
 
 
 
-    @Override
+    /*@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fg_content,container,false);
         TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
@@ -85,5 +85,5 @@ public class MyFragment2 extends Fragment {
         tabHost = (TabHost) view.findViewById(android.R.id.tabhost);
         tabWidget = (TabWidget) view.findViewById(android.R.id.tabs);
     }
-
+*/
 }

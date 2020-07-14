@@ -196,6 +196,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 note.time = get_time;
                 note.username1 = name;
                 note.context = get_context;
+                note.cost = "0";
 
                 boolean add = noteOperator.insert(note);
                 //如果添加数据成功，跳到待办事项界面，并通过传值，让目标界面进行刷新
