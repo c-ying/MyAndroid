@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tab1Activity" >
+
+    <!--xianshi shizhong  Time-->
+    <com.example.timer.MyButton
+        android:id="@+id/myBtn"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:src="@mipmap/ic_tur_icon"
+        android:background="@color/bottom_bg"
+        android:scaleType="center"
+        tools:ignore="MissingConstraints">
+    </com.example.timer.MyButton>
+
+    <TextView
+        android:id="@+id/main_tv"
+        android:layout_width="121dp"
+        android:layout_height="39dp"
+        android:textSize="80dp" />
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="200dp"
+        android:text="快点开始你的计划吧"
+        android:textSize="36sp" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Button"
+        android:scaleType="center"/>
+
+
+</RelativeLayout>
