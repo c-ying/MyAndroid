@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"><!--manifest里设置为这个acitivity设置了主题 我设置的主题与app使用主题冲突-->
-
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MyFragment2FF">
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
@@ -26,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <com.example.myapplication.AlarmView
                     android:id="@+id/tabAlarm"
                     android:layout_width="match_parent"
@@ -41,8 +40,7 @@
 
                     <Button
                         android:id="@+id/btnAddAlarm"
-                        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
-                        android:layout_width="50dp"
+                        android:layout_width="55dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:background="@android:drawable/ic_menu_add" />
@@ -50,21 +48,7 @@
 
                 </com.example.myapplication.AlarmView>
 
-                <LinearLayout
-                    android:id="@+id/tabTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
 
-                    android:id="@+id/dClock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="40sp"
-                    android:layout_gravity="center" />
-
-
-
-                </LinearLayout>
                 <com.example.myapplication.TimerView
                     android:id="@+id/tabTimer"
                     android:layout_width="match_parent"
@@ -136,7 +120,6 @@
                     </LinearLayout>
                 </com.example.myapplication.TimerView>
 
-
                 <com.example.myapplication.StopWatch
                     android:id="@+id/tabStopWatch"
                     android:layout_width="match_parent"
@@ -189,6 +172,5 @@
             </FrameLayout>
         </LinearLayout>
     </TabHost>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

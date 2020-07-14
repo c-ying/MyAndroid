@@ -1,9 +1,17 @@
 package com.example.myapplication;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import java.util.Random;
 
@@ -143,6 +151,28 @@ public class Code {
     private void randomPadding() {
         padding_left += base_padding_left + random.nextInt(range_padding_left);
         padding_top = base_padding_top + random.nextInt(range_padding_top);
+    }
+
+    public static class BaseFragment extends Fragment {
+        protected View mMainView;
+        protected Context mContext;
+
+        public BaseFragment() {
+            super();
+        }
+
+        @Override
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
+            mContext = activity.getApplicationContext();
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            mMainView = inflater.inflate(R.layout.fragment_base, container, false);
+            return mMainView;
+        }
+
     }
 }
 

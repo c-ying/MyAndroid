@@ -26,6 +26,16 @@
         <activity android:name=".UpdateActivity" />
 
         <activity android:name=".SecurityActivity"></activity>
+
+
+
+        <activity android:name=".PlayAlarmAty" />
+        <activity android:name=".Tab2Activity" />
+        <activity android:name=".MyFragment2FF" />
+        <activity android:name=".Tab1Activity" />
+
+        <receiver android:name=".AlarmReceiver"
+            android:process=":remote"/>
     </application>
 
 </manifest>
