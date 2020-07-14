@@ -20,37 +20,38 @@ public class UserService {
         // SQLiteDatabase sdb=dbHelper.getReadableDatabase();
         SQLiteDatabase sdb = dbHelper.getWritableDatabase();
         //String sql="select * from user9 where username=? and password=?";
-        Cursor cursor=sdb.rawQuery("select * from user2 where username=? and password=?", new String[]{username,password});
+        Cursor cursor=sdb.rawQuery("select * from user5 where username=? and password=?", new String[]{username,password});
         // Cursor c = sdb.query("user9", null, "username=? and password=?", new String[]{username, password});
         if(cursor.moveToFirst()==true){
             if(cursor!=null&&cursor.isClosed()){
                 cursor.close();}
             return true;
         }
-        /*if (c != null && c.getCount() >= 1) {
-            c.close();
-            sdb.close();
-            return true;
-        }
-        */else {
+        else {
             return false;
         }
     }
     public boolean register(User user){
-        /*SQLiteDatabase sdb=dbHelper.getReadableDatabase();
-        String sql="insert into user9(username,password,email) values(?,?,?)";
-        Object obj[]={User.K_username,User.K_password,User.K_email};
-        sdb.execSQL(sql, obj);
-        sdb.close();
-        return true;*/
+
         SQLiteDatabase db=dbHelper.getWritableDatabase();
-        ContentValues contentValues=new ContentValues();
-        contentValues.put(User.K_username,user.username);
-        contentValues.put(User.K_password,user.password);
-        contentValues.put(User.K_email,user.email);
-        db.insert(User.TABLE,null,contentValues);
-        db.close();
-        return true;
+        String sql = "select " + "*" +
+                " from " + User.TABLE + " where " + User.K_username + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
+        if(cursor.moveToFirst()==true){
+            if(cursor!=null&&cursor.isClosed()){
+                cursor.close();}
+                return  false;
+           }
+        else{
+            ContentValues contentValues=new ContentValues();
+            contentValues.put(User.K_username,user.username);
+            contentValues.put(User.K_password,user.password);
+            contentValues.put(User.K_email,user.email);
+            db.insert(User.TABLE,null,contentValues);
+            db.close();
+
+            return true;
+        }
     }
 
     public boolean update(User user){
@@ -61,21 +62,13 @@ public class UserService {
         contentValues.put(User.K_sex,user.sex);
         contentValues.put(User.K_birth,user.birth);
         contentValues.put(User.K_signature,user.signature);
+        contentValues.put(User.K_job,user.job);
         db.update(User.TABLE,contentValues,User.K_username + "=?",new String[]{String.valueOf(user.username)});
-       /* String username=user.getUsername();
-        String password=user.getPassword();
-        String email=user.getEmail();
-        String sex=user.getSex();
-        String birth=user.getBirth();
-        String signature=user.getSignature();
-        String sql="update user9 set password=password ,email='email',sex='sex',birth='birth',signature='signature'  where username='username'";
-        db.execSQL(sql);*/
-        //Object obj[]={user.getPassword(),,user.getSex(),user.getBirth(),user.getSignature(),user.getUsername()};
-        //sdb.execSQL("update user2 set password=?,email=?,sex=?,birth=?,signature=? where username=?",new Object[]{user.getPassword(),user.getEmail(),user.getSex(),user.getBirth(),user.getSignature(),user.getUsername()});
-
         db.close();
         return true;
     }
+
+
     public boolean updatepass(User user){
         SQLiteDatabase db=dbHelper.getReadableDatabase();
         ContentValues contentValues=new ContentValues();
@@ -85,12 +78,9 @@ public class UserService {
         return true;
     }
     public String getNicheng(User user) {
-        //String nicheng;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String sql = "select " + User.K_nicheng +
                 " from " + User.TABLE + " where " + User.K_username + "=?";
-        //String sql = "select " + Note.KEY_title + "," + Note.KEY_context +
-        // " from " + Note.TABLE + " where " + Note.KEY_id + "=?";
 
         Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
         while(cursor.moveToNext()) {
@@ -101,7 +91,68 @@ public class UserService {
         db.close();
         return user.nicheng;
     }
-
-    public static class Tab1Activity {
+    public String getEmail(User user) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select " + User.K_email +
+                " from " + User.TABLE + " where " + User.K_username + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
+        while(cursor.moveToNext()) {
+            user.email = cursor.getString(cursor.getColumnIndex(User.K_email));
+        }
+        cursor.close();
+        db.close();
+        return user.email;
     }
+    public String getSign(User user) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select " + User.K_signature +
+                " from " + User.TABLE + " where " + User.K_username + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
+        while(cursor.moveToNext()) {
+            user.signature = cursor.getString(cursor.getColumnIndex(User.K_signature));
+        }
+        cursor.close();
+        db.close();
+        return user.signature;
+    }
+
+    public String getSex(User user) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select " + User.K_sex +
+                " from " + User.TABLE + " where " + User.K_username + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
+        while(cursor.moveToNext()) {
+            user.sex = cursor.getString(cursor.getColumnIndex(User.K_sex));
+        }
+        cursor.close();
+        db.close();
+        return user.sex;
+    }
+
+    public String getBirth(User user) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select " + User.K_birth +
+                " from " + User.TABLE + " where " + User.K_username + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
+        while(cursor.moveToNext()) {
+            user.birth = cursor.getString(cursor.getColumnIndex(User.K_birth));
+        }
+        cursor.close();
+        db.close();
+        return user.birth;
+    }
+
+    public String getJob(User user) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select " + User.K_job +
+                " from " + User.TABLE + " where " + User.K_username + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{String.valueOf(user.username)});
+        while(cursor.moveToNext()) {
+            user.job = cursor.getString(cursor.getColumnIndex(User.K_job));
+        }
+        cursor.close();
+        db.close();
+        return user.job;
+    }
+
 }

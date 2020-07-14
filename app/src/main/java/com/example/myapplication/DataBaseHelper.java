@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHelper  extends SQLiteOpenHelper {
-    static String D_NAME="user2.db";
+    static String D_NAME="user5.db";
     /*static String TABLE_NAME="user9";
     static String username="username";
     static String password="password";
@@ -30,7 +30,8 @@ public class DataBaseHelper  extends SQLiteOpenHelper {
                 +User.K_email+" text,"
                 +User.K_sex+" text,"
                 +User.K_birth+" text,"
-                +User.K_signature+" text)";//,IMAGE blob not null
+                +User.K_signature+" text,"
+                +User.K_job+" text)";
         sqLiteDatabase.execSQL(sql);
     }
 

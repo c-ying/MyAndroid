@@ -38,8 +38,18 @@ public class MyFragment4 extends Fragment implements AdapterView.OnItemClickList
     ImageButton update;//修改资料
     TextView bt7;//退出登录
     TextView nicheng;
+    TextView email;
+    TextView signature;
+    TextView sex;
+    TextView birth;
+    TextView job;
     public MyFragment4(){}
     String nichengstr;
+    String emailstr;
+    String signstr;
+    String sexstr;
+    String birthstr;
+    String jobstr;
 
     //定义回调接口
     public interface MyListener{
@@ -93,6 +103,34 @@ public class MyFragment4 extends Fragment implements AdapterView.OnItemClickList
         nichengstr=userService.getNicheng(user);
         nicheng=(TextView)view.findViewById(R.id.nicheng);
         nicheng.setText(nichengstr);
+
+        //获取邮箱
+        emailstr=userService.getEmail(user);
+        email=(TextView)view.findViewById(R.id.email);
+        email.setText(emailstr);
+
+        //获取签名
+        signstr=userService.getSign(user);
+        signature=(TextView)view.findViewById(R.id.signature);
+        signature.setText(signstr);
+
+        //获取性别
+        sexstr=userService.getSex(user);
+        sex=(TextView)view.findViewById(R.id.sex);
+        sex.setText(sexstr);
+
+        //获取生日
+        birthstr=userService.getBirth(user);
+        birth=(TextView)view.findViewById(R.id.birth);
+        birth.setText(birthstr);
+
+        //获取职业
+        jobstr=userService.getJob(user);
+        birth=(TextView)view.findViewById(R.id.job);
+        birth.setText(jobstr);
+
+
+
 
         //退出程序
         bt7=(TextView)view.findViewById(R.id.bt7);

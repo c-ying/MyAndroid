@@ -141,6 +141,25 @@
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="职        业："
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/jobUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="输入职业"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
