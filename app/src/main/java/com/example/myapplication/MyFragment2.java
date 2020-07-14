@@ -46,7 +46,7 @@ public class MyFragment2 extends Fragment {
         localIntent1.setClass(getActivity(), Tab1Activity.class);
         tabHost.addTab(tabHost
                 .newTabSpec("专注时刻")
-                .setIndicator("tabhost1")//,
+                .setIndicator("专注时刻")//,
                 //localResources.getDrawable(R.drawable.ic_launcher))
                 .setContent(localIntent1));
 
@@ -54,7 +54,7 @@ public class MyFragment2 extends Fragment {
         localIntent2.setClass(getActivity(), Tab2Activity.class);
 
         TabHost.TabSpec localTabSpec2 = tabHost.newTabSpec("轻松时刻");
-        localTabSpec2.setIndicator("tabhost2");
+        localTabSpec2.setIndicator("轻松时刻");
         localTabSpec2.setContent(localIntent2);
         tabHost.addTab(localTabSpec2);
 

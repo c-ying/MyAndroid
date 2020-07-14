@@ -34,6 +34,7 @@
         <activity android:name=".Tab2Activity" />
         <activity android:name=".MyFragment2FF" />
         <activity android:name=".Tab1Activity" />
+        <activity android:name=".Mygame" />
 
         <receiver android:name=".AlarmReceiver"
             android:process=":remote"/>

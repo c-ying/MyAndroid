@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/login"
     tools:context=".Tab1Activity" >
 
     <!--xianshi shizhong  Time-->
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="200dp"
-        android:text="点击小乌龟开始你的计划吧"
+        android:text="点击小乌龟开始你的自主学习计时吧"
         android:textSize="20sp" />
 
     <Button

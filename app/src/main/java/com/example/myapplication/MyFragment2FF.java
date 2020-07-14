@@ -13,7 +13,7 @@ public class MyFragment2FF extends Activity {
         tabHost.setup();
 //四个分页 使用tabhost
         tabHost.addTab(tabHost.newTabSpec("tabAlarm").setIndicator("闹钟").setContent(R.id.tabAlarm));
-        tabHost.addTab(tabHost.newTabSpec("tabTimer").setIndicator("计时器").setContent(R.id.tabTimer));
+        tabHost.addTab(tabHost.newTabSpec("tabTimer").setIndicator("倒计时").setContent(R.id.tabTimer));
         tabHost.addTab(tabHost.newTabSpec("tabStopWatch").setIndicator("秒表").setContent(R.id.tabStopWatch));
     }
 }
