@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="200dp"
-        android:text="快点开始你的计划吧"
+        android:text="点击小乌龟开始你的计划吧"
         android:textSize="20sp" />
 
     <Button
@@ -37,8 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:scaleType="center"
-        android:layout_marginTop="300dp"
-        android:text="Button" />
+        android:layout_marginTop="320dp"
+        android:background="@android:color/transparent" />
 
 
 </RelativeLayout>
