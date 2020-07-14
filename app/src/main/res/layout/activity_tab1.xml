@@ -5,7 +5,7 @@
     tools:context=".Tab1Activity" >
 
     <!--xianshi shizhong  Time-->
-    <com.example.timer.MyButton
+    <com.example.myapplication.MyButton
         android:id="@+id/myBtn"
         android:layout_width="match_parent"
         android:layout_height="64dp"
@@ -13,7 +13,7 @@
         android:background="@color/bottom_bg"
         android:scaleType="center"
         tools:ignore="MissingConstraints">
-    </com.example.timer.MyButton>
+    </com.example.myapplication.MyButton>
 
     <TextView
         android:id="@+id/main_tv"
