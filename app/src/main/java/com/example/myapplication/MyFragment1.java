@@ -25,20 +25,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by Jay on 2015/8/28 0028.
- */
+
 public class MyFragment1 extends Fragment {
 
 
 
     String username1;
     ListView listView;
-    Button add,tongji;//添加按钮
-    Button ceshi;
-    TextView note_id;//向其他界面传值
+    Button add;//添加按钮
     ArrayList<HashMap<String, String>> list;
-    private List<ClipData.Item> itemList;
 
 
     public MyFragment1() {

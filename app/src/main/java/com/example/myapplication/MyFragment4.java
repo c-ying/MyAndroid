@@ -24,9 +24,7 @@ import androidx.fragment.app.FragmentManager;
 import java.util.ArrayList;
 
 
-/**
- * Created by Jay on 2015/8/28 0028.
- */
+
 @SuppressLint("ValidFragment")
 public class MyFragment4 extends Fragment implements AdapterView.OnItemClickListener {
 

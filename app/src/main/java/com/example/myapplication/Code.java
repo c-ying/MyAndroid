@@ -15,9 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Random;
 
-/**
- * Created by littlecurl 2018/6/24
- */
+
 
 public class Code {
     /**

@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //将验证码用图片的形式显示出来
         mIvRegisteractivityShowcode.setImageBitmap(Code.getInstance().createBitmap());
-        realCode = Code.getInstance().getCode().toLowerCase();
+        realCode = Code.getInstance().getCode().toLowerCase();  //tolowerCase()方法将字符串转化成小写
 
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -49,7 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
                 UserService uService=new UserService(RegisterActivity.this);
 
                 if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(pass)&&!TextUtils.isEmpty(emailstr)&&pass.equals(pass1)) {
-                    if (phoneCode.equals(realCode)) { User user = new User();
+                    if (phoneCode.equals(realCode)) {
+                        User user = new User();
                         user.username=name;
                         user.password=pass;
                         user.email=emailstr;

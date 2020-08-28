@@ -16,9 +16,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-/**
- * Created by Jay on 2015/8/28 0028.
- */
+
 
 public class MyFragment2 extends Fragment {
     protected View mMainView;

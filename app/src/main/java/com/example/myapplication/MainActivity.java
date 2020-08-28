@@ -22,9 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by Coder-pig on 2015/8/28 0028.
- */
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener,
         ViewPager.OnPageChangeListener {
 

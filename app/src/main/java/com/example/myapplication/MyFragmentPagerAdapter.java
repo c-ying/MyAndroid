@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-/**
- * Created by Jay on 2015/8/31 0031.
- */
+
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private final int PAGER_COUNT = 4;
