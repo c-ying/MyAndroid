@@ -55,7 +55,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
             case com.example.myapplication.MainActivity.PAGE_TWO:
                 fragment = myFragment2;
                 break;
-            case com.example.myapplication.MainActivity.PAGE_THREE:
+            case MainActivity.PAGE_THREE:
                 fragment = myFragment3;
                 break;
             case com.example.myapplication.MainActivity.PAGE_FOUR:

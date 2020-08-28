@@ -24,13 +24,8 @@
             android:id="@+id/rb_message"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_message"
-            android:text="@string/tab_menu_profile" />
+            android:text="专注" />
 
-        <RadioButton
-            android:id="@+id/rb_better"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_better"
-            android:text="@string/tab_menu_pay" />
 
         <RadioButton
             android:id="@+id/rb_setting"

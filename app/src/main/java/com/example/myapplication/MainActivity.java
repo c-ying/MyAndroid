@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_channel = (RadioButton) findViewById(R.id.rb_channel);
         rb_message = (RadioButton) findViewById(R.id.rb_message);
-        rb_better = (RadioButton) findViewById(R.id.rb_better);
+      //  rb_better = (RadioButton) findViewById(R.id.rb_better);
         rb_setting = (RadioButton) findViewById(R.id.rb_setting);
         rg_tab_bar.setOnCheckedChangeListener(this);
 
@@ -101,9 +101,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             case R.id.rb_message:
                 vpager.setCurrentItem(PAGE_TWO);
                 break;
-            case R.id.rb_better:
-                vpager.setCurrentItem(PAGE_THREE);
-                break;
+            //case R.id.rb_better:
+               // vpager.setCurrentItem(PAGE_THREE);
+             //   break;
             case R.id.rb_setting:
                 vpager.setCurrentItem(PAGE_FOUR);
                 break;
