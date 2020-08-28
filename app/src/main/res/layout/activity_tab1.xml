@@ -20,7 +20,11 @@
     <TextView
         android:id="@+id/main_tv"
         android:layout_width="match_parent"
-        android:layout_height="194dp"
+        android:layout_height="173dp"
+        android:textColor="@color/main"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textSize="80dp" />
 
     <TextView
@@ -29,8 +33,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="200dp"
-        android:text="     点击小乌龟开始你的自主学习计时吧"
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="点击小乌龟开始你的自主学习计时吧"
         android:textSize="20sp" />
 
     <Button

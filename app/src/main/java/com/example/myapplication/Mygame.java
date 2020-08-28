@@ -33,6 +33,7 @@ public class Mygame extends Activity {
         super.onCreate(savedInstanceState);
         mSnakeView = new SnakeView(this);
         setContentView(mSnakeView);
+        //layout.setackgroundcolor(R.color.bg_black);
         isPaused = false;
 
         mRefreshThread = new Thread("TimerThread"){

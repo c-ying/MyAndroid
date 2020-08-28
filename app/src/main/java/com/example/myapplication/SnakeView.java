@@ -110,8 +110,9 @@ public class SnakeView extends View {
        mHeight = h;
    }
 
-   private void drawBg(Canvas canvas, Paint paint) {
-       canvas.drawColor(Color.WHITE);
+   private void drawBg(Canvas canvas, Paint paint) {//背景颜色
+      // Color.parseColor("BLUE");
+       canvas.drawColor(Color.GRAY);
        //Rect rect = new Rect(sXOffset, sYOffset, mWidth - sXOffset, mHeight - sYOffset);
        //canvas.drawRect(rect, paint);
    }
@@ -124,7 +125,7 @@ public class SnakeView extends View {
        }
        snakeMove(mSnakeList, mSnakeDirection);
        //Log.e(TAG, " isFoodEaten() = " + isFoodEaten() + " mIsFoodDone = " + mIsFoodDone);
-       if(isFoodEaten()) {
+       if(isFoodEaten()) {//是否吃食物
            mIsFoodDone = true;
        } else {
            mSnakeList.remove(mSnakeList.size() - 1);
@@ -142,7 +143,7 @@ public class SnakeView extends View {
 
    }
 
-   public void snakeMove(ArrayList<Point> list , int direction) {
+   public void snakeMove(ArrayList<Point> list , int direction) {//移动蛇
        //Log.e(TAG," snakeMove ArrayList = " + list.toString());
        Point orighead = list.get(0);
        Point newhead = new Point();

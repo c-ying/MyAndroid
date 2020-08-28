@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         textview = findViewById(R.id.text);
-          //延迟5000ms跳转到主界面
+        //延迟5000ms跳转到主界面
         handler.postDelayed(myRunnable, showTime * 1000);
         handler.sendEmptyMessage(111);
     }
@@ -30,14 +30,14 @@ public class SplashActivity extends AppCompatActivity {
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            /*if (msg.what == 111)
+            if (msg.what == 111)
             {
                 textview.setText(showTime+"  关闭");
                 showTime--;
                 if (showTime > 0) {
                     handler.sendEmptyMessageDelayed(111, 1000);  //一秒后给自己发送信息
                 }
-            }*/
+            }
         }
     };
 
@@ -72,6 +72,6 @@ public class SplashActivity extends AppCompatActivity {
 
         //如果按回退键，关闭程序，代码设计
         finish();//关闭页面
-         handler.removeCallbacks(myRunnable);//取消runnable对象
+        handler.removeCallbacks(myRunnable);//取消runnable对象
     }
 }
